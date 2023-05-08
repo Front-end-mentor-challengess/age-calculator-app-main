@@ -21,24 +21,21 @@ body{
 main{
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
     background-color: white;
     max-width: 350px;
     min-height: 400px;
-    margin: 25vh auto;
+    margin: 20vh auto;
     padding: 3rem 2rem;
     border-radius: 15px 15px 100px 15px;
 }
 .in{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 .info{
     display: flex;
     flex-direction: column;
-}
-.splitter{
-    display: flex;
 }
 .break{
     border-top: 1px solid var(--Smokey-grey);
@@ -46,19 +43,45 @@ main{
     align-self: center;
 }
 input[type=text]{
-    border: 1px solid var(--Off-white);
+    border: 2px solid var(--Off-white);
     border-radius: 0.25rem;
     margin-left: 0.25rem;
     padding: 0.75rem;
+    color: black;
+    font-weight: 800;
+}
+::placeholder{
+    font-weight: 700;
+}
+label{
+    text-transform: uppercase;
+    color: var(--Smokey-grey);
+    letter-spacing: 3px;
+    font-weight: 800;
+    font-size: 0.75rem;
+}
+.splitter{
+    max-height: 1rem;
 }
 .arrow {
-    padding: 0.75rem;
-    border-radius: 50%;
+    max-width: 70px;
+    padding:  1.25rem 1rem 1rem 1.35rem;
     background-color: var(--Purple);
-    position: absolute;
-    right: 10rem;
-    top: 40vh;
+    border-radius: 50%;
+    position: relative;
+    top: -2rem;
+    left: 6.5rem;
 }
 .arrow img{
     width: 1.75rem;
+}
+.purple{
+    color: var(--Purple);
+}
+.big-font{
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: italic;
+}
+@media screen and (min-width: 625px) {
 }
