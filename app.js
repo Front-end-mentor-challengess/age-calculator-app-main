@@ -33,13 +33,15 @@ form.addEventListener("submit", (event)=>{
     let inputDate = new Date(inputs[2].value, (inputs[1].value)-1, inputs[0].value);
     let totalDaysInput = Math.floor((today - inputDate) / (1000 * 60 * 60 * 24));
 
-    valid = (totalDaysInput >= 0 ) ? true: false; 
+    valid = (totalDaysInput >= 0 && isDate(inputs[1].value -1, inputs[0].value)) ? true: false; 
 
     if(valid){
-        yearsOut.textContent = Math.floor(totalDaysInput / 365);
-        totalDaysInput = totalDaysInput % 365;
-        monthsOut.textContent = Math.floor(totalDaysInput / 12);
-        totalDaysInput = totalDaysInput % 12;
+        const years = Math.floor(totalDaysInput / 365);
+        yearsOut.textContent = years;
+        totalDaysInput = totalDaysInput - (years * 365);
+        const months = Math.floor(totalDaysInput / 30);
+        monthsOut.textContent = months;
+        totalDaysInput = totalDaysInput - (months * 30);
         daysOut.textContent = totalDaysInput;
     }  
     else{
@@ -78,4 +80,7 @@ const resetInputs = ()=>{
         if(invalidDate.classList.length !== 1) invalidDate.className = ['invalid-date'];
     }
 };
-
+const isDate = (month, day)=>{
+    const daysPerMonth = [31,28,31,30,31,30,31,31,30,31,30,31];
+    return day <= daysPerMonth[month];
+};
