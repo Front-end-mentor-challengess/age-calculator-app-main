@@ -18,15 +18,15 @@ body{
     background-color: var(--Off-white);
     font-weight: 400;
 }
-main{
+form{
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
     background-color: white;
     max-width: 350px;
     min-height: 400px;
-    margin: 20vh auto;
-    padding: 3rem 2rem;
+    margin: 15vh auto;
+    padding: 4rem 3rem;
     border-radius: 15px 15px 100px 15px;
 }
 .in{
@@ -38,20 +38,27 @@ main{
     flex-direction: column;
 }
 .break{
-    border-top: 1px solid var(--Smokey-grey);
+    border-top: 2px solid var(--Light-grey);
     width: 100%;
     align-self: center;
 }
-input[type=text]{
-    border: 2px solid var(--Off-white);
+input[type=number]{
     border-radius: 0.25rem;
+    border: 2px solid var(--Off-white);
     margin-left: 0.25rem;
     padding: 0.75rem;
     color: black;
     font-weight: 800;
+    width: 4.5rem;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 ::placeholder{
-    font-weight: 700;
+    font-weight: 800;
 }
 label{
     text-transform: uppercase;
@@ -64,16 +71,24 @@ label{
     max-height: 1rem;
 }
 .arrow {
-    max-width: 70px;
-    padding:  1.25rem 1rem 1rem 1.35rem;
+    min-width: 60px;
+    min-height: 60px;
     background-color: var(--Purple);
+    border: none;
     border-radius: 50%;
     position: relative;
     top: -2rem;
     left: 6.5rem;
+    background-image: url('assets/images/icon-arrow.svg');
+    background-repeat: no-repeat;
+    background-position-x: 13px;
+    background-position-y: 13px;
+    background-size: 2rem;
+    object-fit: cover;
 }
-.arrow img{
-    width: 1.75rem;
+.arrow:hover{
+    cursor: pointer;
+    background-color: black;
 }
 .purple{
     color: var(--Purple);
@@ -83,5 +98,39 @@ label{
     font-weight: 800;
     font-style: italic;
 }
+.error-msg,
+.invalid-date{
+    font-size: 0.5rem;
+    margin-left: 0.5rem;
+    margin-top: 0.25rem;
+    font-weight: 400;
+    display: none;
+}
+.red{
+    color: var(--Light-red);
+}
+.red-border{
+    border: 2px solid red !important;
+}
 @media screen and (min-width: 625px) {
+    form{
+        gap: 1rem;
+        max-width: 600px;
+        border-radius: 15px 15px 150px 15px;
+    }
+    .big-font{
+        font-size: 4rem;
+    }
+    .arrow{
+        left: 29rem;
+    }
+    .splitter{
+        margin-top: 1rem;
+    }
+    input[type=number]{
+        width: 6rem;
+    }
+}
+.display{
+    display: unset;
 }
